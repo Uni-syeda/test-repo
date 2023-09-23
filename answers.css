@@ -1,0 +1,12 @@
+div{
+    display:flexbox;
+    color: rgb(29, 21, 144);
+}
+
+.text-box {
+    width: 450px; /* Set the width of the box */
+    height: 350px; /* Set the height of the box */
+    border: 2px solid #000; /* Add a border to the box */
+    padding: 20px; /* Add padding inside the box */
+    background-color: #f0f0f0; /* Set the background color of the box */
+}

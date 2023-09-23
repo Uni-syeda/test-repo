@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Mindset Quiz</title>
+</head>
+<body>
+    <!-- Quiz form -->
+    <form id="quizForm">
+        <h1>Take the quiz!</h1>
+
+        <!-- Images -->
+        <img src="images-7.jpeg" alt="alternatetext">
+        <img src="image_3.jpeg" alt="alternatetext">
+        <img src="images.jpeg" alt="alternatetext">
+
+        <h4>Please select an option to determine your mindset.</h4>
+
+        <!-- Quiz questions -->
+        <ol>
+            <div>
+                <label for="question1"><li>Do you enjoy taking on new challenges?</li></label>
+                <!-- Options to choose -->
+                <input type="radio" name="question1" value="4"> Strongly Agree
+                <input type="radio" name="question1" value="3"> Agree
+                <input type="radio" name="question1" value="2"> Disagree
+                <input type="radio" name="question1" value="1"> Strongly Disagree
+            </div>
+
+            <div>
+                <label for="question2"><li>Trying new things is stressful for me and I avoid it!</li></label>
+                <!-- Options to choose -->
+                <input type="radio" name="question2" value="4"> Strongly Agree
+                <input type="radio" name="question2" value="3"> Agree
+                <input type="radio" name="question2" value="2"> Disagree
+                <input type="radio" name="question2" value="1"> Strongly Disagree
+            </div>
+
+            <div>
+                <label for="question3"><li>Anyone can become a coder and secure a developer job?</li></label>
+                <!-- Options to choose -->
+                <input type="radio" name="question3" value="4"> Strongly Agree
+                <input type="radio" name="question3" value="3"> Agree
+                <input type="radio" name="question3" value="2"> Disagree
+                <input type="radio" name="question3" value="1"> Strongly Disagree
+            </div>
+
+            <div>
+                <label for="question4"><li>Do you believe that your abilities can be developed through hard work?</li></label>
+                <!-- Options to choose -->
+                <input type="radio" name="question4" value="4"> Strongly Agree
+                <input type="radio" name="question4" value="3"> Agree
+                <input type="radio" name="question4" value="2"> Disagree
+                <input type="radio" name="question4" value="1"> Strongly Disagree
+            </div>
+
+            <div>
+                <label for="question5"><li>Do you embrace failure as an opportunity to learn?</li></label>
+                <!-- Options to choose -->
+                <input type="radio" name="question5" value="4"> Strongly Agree
+                <input type="radio" name="question5" value="3"> Agree
+                <input type="radio" name="question5" value="2"> Disagree
+                <input type="radio" name="question5" value="1"> Strongly Disagree
+            </div>
+        </ol>
+
+        <button type="button" onclick="calculateMindset()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateMindset() {
+            const form = document.getElementById("quizForm");
+            const resultDiv = document.getElementById("result");
+            const answers = form.elements;
+
+            let score = 0;
+
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i].type === "radio" && answers[i].checked) {
+                    // Check the value of the selected radio button
+                    const selectedValue = answers[i].value;
+
+                    // Assign scores based on the selected value
+                    if (selectedValue === "4") {
+                        score += 4; // Strongly Agree
+                    } else if (selectedValue === "3") {
+                        score += 3; // Agree
+                    } else if (selectedValue === "2") {
+                        score += 2; // Disagree
+                    } else if (selectedValue === "1") {
+                        score += 1; // Strongly Disagree
+                    }
+                }
+            }
+
+            let mindset = "Fixed Mindset";
+
+            if (score >= 10) {
+                mindset = "Growth Mindset";
+            }
+
+            resultDiv.innerHTML = `Your mindset is: ${mindset}`;
+        }
+    </script>
+
+    <br> 
+    <!--Navigate to answers page-->
+    <p>To get the answers please click below</p>
+    <a href="Quiz_answers.html" target="_blank">Answers</a>
+</body>
+</html>
+
+
+    <br />
+    <p>To get the full answers please click below</p>
+
+    <a href="Quiz_answers.html" target="_blank">Answers</a>
+      
+    
+  </body>
+</html>
+
